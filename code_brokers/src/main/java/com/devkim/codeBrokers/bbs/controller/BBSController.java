@@ -1,4 +1,4 @@
-package com.devkim.codeBrokers.controller;
+package com.devkim.codeBrokers.bbs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,23 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BBSController {
 	
 	@RequestMapping("/index.cbs")
-	public String home(Model model) {
+	public String main(Model model) {
 		return "index";
-	}
-	
-	@RequestMapping("/joinForm.cbs")
-	public String joinForm() {
-		return "joinForm";
-	}
-	
-	@RequestMapping("/join.cbs")
-	public String join() {
-		return "joinOK";
-	}
-	
-	@RequestMapping("/login.cbs")
-	public String login() {
-		return "";
 	}
 	
 	@RequestMapping("/test.cbs")

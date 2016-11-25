@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -7,10 +6,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code Brokers</title>
+<title>CodeBrokers</title>
 <link rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/codeBrokers.css">
+<link rel="stylesheet" href="resources/css/index.css?ver=1">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -59,12 +58,10 @@
 
 					<li><a href="/codeBrokers/test.cbs">테스트 메뉴</a></li>
 					<li id="login">
-<%-- 								<c:if test="{id == null}"> --%>
 						<a href="#loginModalLayer" class="modalLink"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;로그인</a>
-<%-- 								</c:if> --%>
-<%-- 								<c:if test="{id != null}"> --%>
-<%-- 									${nickName} 님 반갑습니다^^ --%>
-<%-- 								</c:if> --%>
+						<c:if test="{id} != null">
+							${nickname} 님 반갑습니다^^
+						</c:if>
 					</li>
 				</ul>
 			</div>		
@@ -355,20 +352,18 @@
 		</div>
 	</article>
 	<footer>
-		<div class="footer">
-			<h2>here is footer...^^</h2>
-		</div>
+		<div class="footer">ⓒ 2016. CodeBrokers all rights reserved.</div>
 	</footer>
 <div id="mask"></div>
 <div id="loginModalLayer">
 	<div class="loginView">
 		<p>로그인<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
-		<form method="post" id="loginForm">
-			<p><input type="text" class="form-control" id="loginId" placeholder="아이디"></p> 
-			<p><input type="password" class="form-control" id="loginPassword" placeholder="패스워드"></p>
+		<form action="/codeBrokers/login.cbs" method="post" id="loginForm">
+			<p><input type="text" class="form-control" name="id" id ="loginId" placeholder="아이디"></p> 
+			<p><input type="password" class="form-control" name="loginPassword" id="password" placeholder="패스워드"></p>
 			<p><input type="checkbox" id="loginCheck">&nbsp;로그인 유지<button class="btn btn-default btn-sm" id="find">ID/PW 찾기</button></p>
 			<p><button class="btn btn-default" id="join" type="button" onclick="location.href='/codeBrokers/joinForm.cbs'">회원가입</button>
-					<button class="btn btn-primary" id="login">
+					<button class="btn btn-primary" id="login" type="submit">
 					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;로그인</button>
 			</p>								 
 		</form>
@@ -376,6 +371,6 @@
 </div>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
-	<script src="resources/js/codeBrokers.js"></script>
+	<script src="resources/js/index.js?ver=1"></script>
 </body>
 </html>
