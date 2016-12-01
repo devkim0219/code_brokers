@@ -1,9 +1,14 @@
 @CHARSET "UTF-8";
+
 html, body {
 	font-family: NanumGothic, sans-serif;
 	color: #666;
 	margin: 0;
 	padding: 0;
+}
+
+#wrapper {
+	min-height: 100%;
 }
 
 .nav {
@@ -23,7 +28,7 @@ html, body {
 .navbar .nav .dropdown-menu > li > a:hover {
 	background-color: #7699db;
 	color: white;
-} 
+}
 
 #login {
 	float: right;
@@ -36,7 +41,7 @@ html, body {
 
 #loginModalLayer .loginView {
 	width:280px;
-	height: 230px;
+	height: 240px;
 	padding: 15px;
 	border: 1px solid #ccc;
 	position: fixed;
@@ -106,13 +111,11 @@ html, body {
 
 .content {
 	font-family: NanumGothic, sans-serif;
-	width: 80%;
+	width: 75%;
 	margin: 0 auto;
 	position: relative;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
 	line-height: 1.8;
-	padding: 10px;
+	padding-top: 10px;
 	color: #666;
 }
 
@@ -128,7 +131,22 @@ html, body {
 	margin-bottom: 0;
 }
 
+th {
+	text-align: center;
+}
+
+#writeBtn {
+	float: right;
+}
+
+#paging {
+	margin-bottom: 10px;
+}
+
 .footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	height: 100px;
 	text-align: center;
 	border-top: 1px solid #ddd;

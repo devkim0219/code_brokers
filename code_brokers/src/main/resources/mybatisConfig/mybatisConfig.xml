@@ -17,6 +17,7 @@
 	<typeAliases>
 		<typeAlias alias="member" type="com.devkim.codeBrokers.member.dto.MemberDto"/>
 		<typeAlias alias="login" type="com.devkim.codeBrokers.login.dto.LoginDto"/>
+		<typeAlias alias="article" type="com.devkim.codeBrokers.bbs.dto.BBSDto"/>
 	</typeAliases>
 	
 </configuration>

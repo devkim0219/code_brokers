@@ -37,6 +37,10 @@
 		
 	<bean id="loginDao" class="org.mybatis.spring.mapper.MapperFactoryBean"
 		p:mapperInterface="com.devkim.codeBrokers.login.dao.LoginDao"
-		p:sqlSessionTemplate-ref="sqlSessionTemplate"/>	
+		p:sqlSessionTemplate-ref="sqlSessionTemplate"/>
+		
+	<bean id="bbsDao" class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:mapperInterface="com.devkim.codeBrokers.bbs.dao.BBSDao"
+		p:sqlSessionTemplate-ref="sqlSessionTemplate"/>		
 		
 </beans>

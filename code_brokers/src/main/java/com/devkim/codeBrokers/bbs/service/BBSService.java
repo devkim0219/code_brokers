@@ -1,5 +1,10 @@
 package com.devkim.codeBrokers.bbs.service;
 
-public interface BBSService {
+import org.springframework.ui.Model;
 
+import com.devkim.codeBrokers.bbs.dto.BBSDto;
+
+public interface BBSService {
+	public void write(BBSDto article);
+	public Model list(int pageNum, String category, Model model);
 }

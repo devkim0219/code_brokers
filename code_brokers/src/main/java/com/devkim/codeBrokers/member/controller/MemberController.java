@@ -12,12 +12,12 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping("/joinForm.cbs")
+	@RequestMapping("/joinForm.member")
 	public String joinForm() {
 		return "joinForm";
 	}
 	
-	@RequestMapping("/join.cbs")
+	@RequestMapping("/join.member")
 	public String join(MemberDto memberDto) {
 		memberService.insertMember(memberDto);
 		return "joinOK";

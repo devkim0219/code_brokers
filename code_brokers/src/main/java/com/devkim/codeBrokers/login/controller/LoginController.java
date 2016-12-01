@@ -14,17 +14,20 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 	
-	@RequestMapping("/login.cbs")
+	@RequestMapping("/login.login")
 	public String loginCheck(HttpSession session, String id, String password) {		
 		int result = 0;
-		String view = "login_fail";
 		result = loginService.loginCheck(session, id, password);
 		
 		if (result == LoginStatus.OK) {
-			System.out.println("로그인 성공^^");
 			session.setAttribute("id", id);
-			view = "redirect:/index.cbs";
 		}
-		return view;
+		return  "redirect:/index.bbs";
+	}
+	
+	@RequestMapping("/logout.login")
+	public String logout(HttpSession session, String password) {
+		session.invalidate();
+		return "redirect:/index.bbs";
 	}
 }

@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+#saveFormBtn {
+	padding-top: 5px;
+	float: right;
+	margin-right: 105px;
+}
+
+#savebutton {
+	margin-right: 5px;
+}
+
+.writeForm {
+	margin-left: 85px;
+}
+
+#title {
+	width: 768px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}

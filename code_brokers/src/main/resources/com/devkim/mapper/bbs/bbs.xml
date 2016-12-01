@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.devkim.codeBrokers.bbs.dao.BBSDao">
+	<insert id="write" parameterType="article">
+		INSERT INTO bbs
+		VALUES(notice_seq.nextval, #{id}, #{title}, #{content}, 0, 0, SYSDATE, SYSDATE, 0, #{category})
+	</insert>
+	<select id="getArticleCount" resultType="int" parameterType="String">
+		SELECT COUNT(*)
+		FROM bbs
+		WHERE category=#{category}
+	</select>
+	<select id="getArticles" parameterType="java.util.HashMap" resultType="article">
+		SELECT ARTICLENUM, ID, TITLE, DEPTH, HIT, TO_CHAR(WRITEDATE, 'YYYY-MM-DD') AS WRITEDATE, TO_CHAR(UPDATEDATE, 'YYYY-MM-DD') AS updateDate, category
+		FROM (SELECT ROWNUM RNUM, b.* 
+		    	  FROM (SELECT ARTICLENUM, ID, TITLE, DEPTH, HIT, WRITEDATE, updateDate, category 
+		            		FROM bbs START WITH GROUPID=0
+		                    				  CONNECT BY PRIOR ARTICLENUM=GROUPID
+		                     				  ORDER SIBLINGS BY ARTICLENUM DESC) b)
+		WHERE category=#{category} AND RNUM BETWEEN #{startRow} AND #{startRow} + 9
+	</select>
+</mapper>

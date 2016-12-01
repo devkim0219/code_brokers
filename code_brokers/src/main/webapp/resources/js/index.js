@@ -1,4 +1,12 @@
-$(document).ready(function() {
+$.ajaxSetup ({
+	type: "post",
+	dataType : "text",
+	error : function(xhr) {
+		alert("error : " + xhr.statusText);
+	}	
+})
+
+$(function() {
 	var loginModalLayer = $("#loginModalLayer");
 	var modalLink = $(".modalLink");
 	var loginView = $(".loginView");
@@ -28,6 +36,19 @@ $(document).ready(function() {
 	}, function() {
 		$(this).find(".dropdown-menu").stop(true, true).delay(10).fadeOut(200);
 	})
+	
+	$("#writeBtn").on("click", function() {
+		$.ajax ({
+			url : "/codeBrokers/writeForm.bbs",
+			data : {
+				category : $("input[name=category]").val()
+			},
+			success : function(data) {
+				$("#content").html(data);
+			} 
+		})
+	})
+
 })
 
 function wrapWindowByMask() {

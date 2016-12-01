@@ -20,8 +20,9 @@ public class LoginServiceImpl implements LoginService {
 	public int loginCheck(HttpSession session, String id, String password) {
 		int loginStatus = 0;
 		List<LoginDto> result = loginDao.loginCheck(id);
-		LoginDto loginDto = result.get(0);
+		
 		if (result.size() != 0) {
+			LoginDto loginDto = result.get(0);
 			if (password.equals(loginDto.getPassword())) {
 				loginStatus = LoginStatus.OK;
 				session.setAttribute("nickname",loginDto.getNickname());
