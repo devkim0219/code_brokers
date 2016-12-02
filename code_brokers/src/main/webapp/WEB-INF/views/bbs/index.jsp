@@ -7,9 +7,10 @@
 <title>CodeBrokers</title>
 <link rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/index.css?ver=1">
-<link rel="stylesheet" href="resources/css/joinForm.css?ver=1">
-<link rel="stylesheet" href="resources/css/writeForm.css?ver=1">
+<link rel="stylesheet" href="resources/css/index.css?ver=2">
+<link rel="stylesheet" href="resources/css/joinForm.css?ver=2">
+<link rel="stylesheet" href="resources/css/writeForm.css?ver=2">
+<link rel="stylesheet" href="resources/css/content.css?ver=2">
 </head>
 <body>
 	<div id="wrapper">
@@ -31,14 +32,14 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="/codeBrokers/list.bbs?pageNum=1&category=notice">공지사항</a></li>
+						<li id="showNotice"><a href="#">공지사항</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">코드 연구실&nbsp;<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=apiLab">API 연구실</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=patternLab">패턴 연구실</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=exceptionLab">Exception 연구실</a></li>
+								<li id="showApiLab"><a href="#">API 연구실</a></li>
+								<li id="showPatternLab"><a href="#">패턴 연구실</a></li>
+								<li id="showExceptionLab"><a href="#">Exception 연구실</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -52,12 +53,12 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">개발자 포럼&nbsp;<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=knowhow">노하우 전수</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=qna">묻고 답하기</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=free">사는 이야기</a></li>
+								<li id="showKnowhow"><a href="#">노하우 전수</a></li>
+								<li id="showQna"><a href="#">묻고 답하기</a></li>
+								<li id="showFree"><a href="#">사는 이야기</a></li>
 							</ul></li>
 	
-						<li><a href="/codeBrokers/test.bbs">테스트 메뉴</a></li>		
+						<li id="showTest"><a href="/codeBrokers/test.bbs">테스트 메뉴</a></li>		
 						<c:if test="${id == null}">
 							<li id="login">
 								<a href="#loginModalLayer" class="modalLink">
@@ -83,17 +84,17 @@
 		</nav>
 		<header>
 			<div class="jumbotron">
-				<h2>메인입니다.(test->총 게시글 수 : ${totalCount})</h2>
+				<h2>${category} (총 게시글 수 : ${totalCount})</h2>
 			</div>
 			<ol class="breadcrumb">
-				<li><a href="/codeBrokers/list.bbs?pageNum=1">메인으로</a></li>
-				<li class="active">메~~~인</li>
+				<li><a href="/codeBrokers/index.bbs">CodeBrokers</a></li>
+				<li class="active"></li>
 			</ol>
 		</header>
 		<article>
 			<div class="content" id="content">
 				<!-- @@@@@CONTENT CONTENT CONTENT@@@@@ -->
-				<%@include file="list.jsp" %>
+				<h1>메인 페이지 입니다...</h1>
 			</div>
 		</article>
 		<footer>
@@ -158,6 +159,7 @@ $(function() {
 		})
 	})
 })
+
 </script>
 </body>
 </html>

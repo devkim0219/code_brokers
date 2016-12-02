@@ -10,6 +10,7 @@
 	    	<button class="btn btn-default" id="savebutton" type="submit">등록</button>
 	    	<button class="btn btn-default" id="cancelSave" type="button">취소</button>
 	    </div>
+	    <input type="hidden" name="category" value="${category}">
 	</form>
 </div>
 <script>

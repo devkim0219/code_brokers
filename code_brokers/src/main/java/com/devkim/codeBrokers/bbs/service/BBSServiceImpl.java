@@ -49,4 +49,10 @@ public class BBSServiceImpl implements BBSService {
 		return model;
 	}
 	
+	public BBSDto content(String articleNum) {
+		bbsDao.content(articleNum);
+		
+		return null;
+	}
+	
 }

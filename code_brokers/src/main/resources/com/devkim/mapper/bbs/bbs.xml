@@ -16,8 +16,14 @@
 		FROM (SELECT ROWNUM RNUM, b.* 
 		    	  FROM (SELECT ARTICLENUM, ID, TITLE, DEPTH, HIT, WRITEDATE, updateDate, category 
 		            		FROM bbs START WITH GROUPID=0
-		                    				  CONNECT BY PRIOR ARTICLENUM=GROUPID
-		                     				  ORDER SIBLINGS BY ARTICLENUM DESC) b)
-		WHERE category=#{category} AND RNUM BETWEEN #{startRow} AND #{startRow} + 9
+		                    			CONNECT BY PRIOR ARTICLENUM=GROUPID
+		                     			ORDER SIBLINGS BY ARTICLENUM DESC) b
+		          WHERE category=#{category})
+		WHERE RNUM BETWEEN #{startRow} AND #{startRow} + 9
+	</select>
+	<select id="content" parameterType="String" resultType="article">
+		SELECT id, title, content, TO_CHAR(writeDate, 'YYYY-MM-DD') AS writeDate, TO_CHAR(updateDate, 'YYYY-MM-DD') AS updateDate
+		FROM bbs
+		WHERE articleNum=#{articleNum}
 	</select>
 </mapper>

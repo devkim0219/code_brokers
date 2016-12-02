@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container" id="tableContainer">
 	<div class="table-responsive">
-		<table class="table table-hover">
+		<table class="table table-hover" >
 			<thead>
 				<tr>
 					<th>글번호</th>
@@ -25,7 +25,7 @@
 							<img src="resources/image/reply.png" width="${16 * article.depth}" height="${16 / article.depth}">
 							<img src="resources/image/reply1.png" width="16" height="16">
 						</c:if>
-						<a href="/codeBrokers/content.bbs?articleNum=${article.articleNum}&pageNum=${pageNum}">
+						<a href="/codeBrokers/content.bbs?articleNum=${article.articleNum}&pageNum=${pageNum}" class="showContent">
 							${article.title}
 <%-- 							<c:if test="${article.commentCount != 0}"> --%>
 <%-- 							<span style="color:red">(${article.commentCount})</span>  --%>
@@ -45,10 +45,11 @@
 			</c:forEach>
 			</tbody>
 		</table>
-		<div align="center" style="{margin-top: 30px;}">	  
+		<div align="center">	  
    			${pageCode}
 		</div>
 	</div>	
 	<button class="btn btn-default" id="writeBtn">글쓰기</button>
 	<input type="hidden" name="category" value="${category}">
+	<input type="hidden" name="totalCount" value="${totalCount}">
 </div>

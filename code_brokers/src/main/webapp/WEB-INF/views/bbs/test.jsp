@@ -15,6 +15,6 @@
 </head>
 <body>
 <h1 align="center">아무 것도 없으니 돌아가거라~~</h1><br />
-<h2 align="center"><a href="./list.bbs?pageNum=1">OK</a></h2>
+<h2 align="center"><a href="./index.bbs">OK</a></h2>
 </body>
 </html>

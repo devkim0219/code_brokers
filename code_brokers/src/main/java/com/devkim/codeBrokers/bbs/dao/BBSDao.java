@@ -9,4 +9,5 @@ public interface BBSDao {
 	public void write(BBSDto article);
 	public int getArticleCount(String category);
 	public List<BBSDto> getArticles(HashMap<Object, Object> paramMap);
+	public BBSDto content(String articleNum);
 }
