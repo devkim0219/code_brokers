@@ -19,6 +19,7 @@ public class BBSServiceImpl implements BBSService {
 	@Autowired
 	Page page;
 	
+	BBSDto article;
 	List<BBSDto> articleList;
 	HashMap<Object, Object> paramMap;
 	
@@ -49,10 +50,15 @@ public class BBSServiceImpl implements BBSService {
 		return model;
 	}
 	
-	public BBSDto content(String articleNum) {
-		bbsDao.content(articleNum);
-		
-		return null;
+	public Model content(String articleNum, Model model) {
+		article = bbsDao.content(articleNum);
+		model.addAttribute("article", article);
+		return model;
+	}
+
+	@Override
+	public void delete(String articleNum) {
+		bbsDao.delete(articleNum);		
 	}
 	
 }

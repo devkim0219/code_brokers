@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devkim.codeBrokers.bbs.dto.BBSDto;
 import com.devkim.codeBrokers.bbs.service.BBSService;
@@ -42,9 +41,18 @@ public class BBSController {
 	}
 	
 	@RequestMapping("/content.bbs")
-	public String content(String pageNum, String articleNum) {
-		bbsService.content(articleNum);
+	public String content(String pageNum, String articleNum, String category, Model model) {
+		model.addAttribute("category", category);
+		model.addAttribute("pageNum", pageNum);
+		model = bbsService.content(articleNum, model);
 		return "content";
+	}	
+	
+	@RequestMapping("delete.bbs")
+	public String delete(String articleNum, String pageNum, String category) {
+		bbsService.delete(articleNum);
+		
+		return "redirect:/list.bbs?pageNum=" + pageNum + "&category=" + category;
 	}
 	
 	@RequestMapping("/test.bbs")

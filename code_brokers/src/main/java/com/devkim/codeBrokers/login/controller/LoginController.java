@@ -15,19 +15,20 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping("/login.login")
-	public String loginCheck(HttpSession session, String id, String password) {		
+	public String loginCheck(HttpSession session, String path, String id, String password) {		
 		int result = 0;
 		result = loginService.loginCheck(session, id, password);
 		
 		if (result == LoginStatus.OK) {
 			session.setAttribute("id", id);
 		}
-		return  "redirect:/index.bbs";
+		return "redirect:/";
 	}
 	
 	@RequestMapping("/logout.login")
 	public String logout(HttpSession session, String password) {
 		session.invalidate();
-		return "redirect:/index.bbs";
+		
+		return "redirect:/";
 	}
 }

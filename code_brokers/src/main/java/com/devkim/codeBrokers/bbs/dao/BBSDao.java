@@ -10,4 +10,5 @@ public interface BBSDao {
 	public int getArticleCount(String category);
 	public List<BBSDto> getArticles(HashMap<Object, Object> paramMap);
 	public BBSDto content(String articleNum);
+	public void delete(String articleNum);
 }

@@ -1,2 +1,78 @@
 @CHARSET "UTF-8";
 
+.viewContent {
+	padding: 0 100px 0 100px;
+}
+
+.contentHeader {
+	margin-top: 30px;
+}
+
+.titleAndAuthor {
+	height: 50px;
+	border-bottom: 1px solid #ddd;
+}
+
+.titleAndAuthor .title {
+	float: left;
+}
+
+.titleAndAuthor .title h4 {
+	margin-bottom: 0;
+}
+
+.titleAndAuthor .author {
+	margin-top: 15px;
+	float: right;
+}
+
+.dateAndCount {
+	padding-top: 5px;
+}
+
+.dateAndCount .url a{
+	float: left;
+	font-size: .9em;
+	color: #b0b3b7;
+}
+
+.dateAndCount .writeDate{
+	margin-left: 15px;
+	font-size: .9em;
+	float: right;
+}
+
+.dateAndCount .hit {
+	font-size: .9em;
+	float: right;
+}
+
+.contentBody {
+	margin-top: 100px;
+	border-bottom: 2px solid #ddd;
+}
+
+.content-control-top {
+	margin-top: 30px;
+}
+
+.control-btn {
+	margin-top: 10px;
+	float: right;
+}
+
+.contentFooter {
+	margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

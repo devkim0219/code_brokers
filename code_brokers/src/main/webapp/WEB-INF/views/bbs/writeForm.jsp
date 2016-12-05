@@ -5,7 +5,7 @@
 		<div id="title">
 			<input type="text" class="form-control" name="title" placeholder="제목을 입력하세요.">
 		</div>
-	    <textarea name="content" id="smarteditor" rows="10" cols="100" style="width:766px; height:412px;"></textarea>
+	    <textarea name="content" id="smarteditor" rows="10" cols="100" style="width:890px; height:412px;"></textarea>
 	    <div id="saveFormBtn">
 	    	<button class="btn btn-default" id="savebutton" type="submit">등록</button>
 	    	<button class="btn btn-default" id="cancelSave" type="button">취소</button>
