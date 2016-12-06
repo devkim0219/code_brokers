@@ -27,8 +27,9 @@ public class BBSController {
 	}
 	
 	@RequestMapping("/writeForm.bbs")
-	public String writeForm(String category, Model model) {
+	public String writeForm(String category, String pageNum, Model model) {
 		model.addAttribute("category", category);
+		model.addAttribute("pageNum", pageNum);
 		return "writeForm";
 	}
 	
@@ -44,15 +45,27 @@ public class BBSController {
 	public String content(String pageNum, String articleNum, String category, Model model) {
 		model.addAttribute("category", category);
 		model.addAttribute("pageNum", pageNum);
-		model = bbsService.content(articleNum, model);
+		bbsService.content(articleNum, model);
 		return "content";
 	}	
 	
 	@RequestMapping("delete.bbs")
 	public String delete(String articleNum, String pageNum, String category) {
 		bbsService.delete(articleNum);
-		
 		return "redirect:/list.bbs?pageNum=" + pageNum + "&category=" + category;
+	}
+	
+	@RequestMapping("/updateForm.bbs")
+	public String updateForm(String pageNum, String articleNum, Model model) {
+		bbsService.getUpdateArticle(articleNum, model);
+		model.addAttribute("pageNum", pageNum);
+		return "updateForm";
+	}
+	
+	@RequestMapping("/update.bbs")
+	public String update(String articleNum, String pageNum, String category, BBSDto article) {
+		bbsService.update(article);
+		return "redirect:/content.bbs?articleNum=" + articleNum + "&pageNum" + pageNum + "&category" + category;
 	}
 	
 	@RequestMapping("/test.bbs")

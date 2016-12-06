@@ -18,7 +18,7 @@ $(function() {
 		wrapWindowByMask();
 		loginModalLayer.fadeIn("fast");
 		loginView.css({"margin-top": -marginTop, "margin-left": -marginLeft, "border-radius": "0.3em"});
-		$("#id").focus();
+		$("#loginId").focus();
 	})
 	
 	$(".loginView .glyphicon").on("click", function() {

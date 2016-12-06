@@ -51,14 +51,31 @@ public class BBSServiceImpl implements BBSService {
 	}
 	
 	public Model content(String articleNum, Model model) {
+		bbsDao.upHit(articleNum);
 		article = bbsDao.content(articleNum);
 		model.addAttribute("article", article);
 		return model;
+	}
+	
+	public void upHit(String articleNum) {
+		bbsDao.upHit(articleNum);
 	}
 
 	@Override
 	public void delete(String articleNum) {
 		bbsDao.delete(articleNum);		
+	}
+
+	@Override
+	public BBSDto getUpdateArticle(String articleNum, Model model) {
+		article = bbsDao.getUpdateArticle(articleNum);
+		model.addAttribute("article", article);
+		return article;
+	}
+
+	@Override
+	public void update(BBSDto article) {
+		bbsDao.update(article);		
 	}
 	
 }

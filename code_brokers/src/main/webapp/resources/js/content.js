@@ -17,7 +17,7 @@ $(function() {
 	
 	$(".btn-update").on("click", function() {
 		$.ajax({
-			url : "/codeBrokers/updateForm.bbs",
+			url : "/codeBrokers/updateForm.bbs?articleNum=" + articleNum + "&pageNum=" + pageNum + "&category=" + category,
 			success : function(data) {
 				$("#content").html(data);
 			}

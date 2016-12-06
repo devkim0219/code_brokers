@@ -25,7 +25,14 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/codeBrokers/index.bbs">Brand</a>
+				<div class="loader-container">
+					<div class="rectangle-2"></div>
+					<div class="rectangle-3"></div>
+					<div class="rectangle-4"></div>
+					<div class="rectangle-5"></div>
+					<div class="rectangle-6"></div>
+				</div>
+					<a class="navbar-brand" href="/codeBrokers/index.bbs">&nbsp;&nbsp;CodeBrokers</a>
 				</div>
 	
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,7 +60,7 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">개발자 포럼&nbsp;<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=knowhow">노하우 전수</a></li>
+								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=news">IT관련 기사</a></li>
 								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=qna">묻고 답하기</a></li>
 								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=free">사는 이야기</a></li>
 							</ul></li>
@@ -108,7 +115,6 @@
 					
 					<div class="content-control-top">
 						<div class="control-btn">
-							<button class="btn btn-default btn-list" type="button">목록</button>
 							<c:if test="${id != null}">
 								<button class="btn btn-default btn-update" type="button">수정</button>
 								<button class="btn btn-default btn-delete" type="button">삭제</button>
@@ -117,6 +123,7 @@
 								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
 								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
 							</c:if>
+							<button class="btn btn-default btn-list" type="button">목록</button>
 						</div>
 					</div>
 					<div class="contentBody">
@@ -124,7 +131,6 @@
 					</div>
 					<div class="content-control-bottom">
 						<div class="control-btn">
-							<button class="btn btn-default btn-list" type="button">목록</button>
 							<c:if test="${id != null}">
 								<button class="btn btn-default btn-update" type="button">수정</button>
 								<button class="btn btn-default btn-delete" type="button">삭제</button>
@@ -133,6 +139,7 @@
 								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
 								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
 							</c:if>
+							<button class="btn btn-default btn-list" type="button">목록</button>
 						</div>
 					</div>
 					<div class="contentFooter">

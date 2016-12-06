@@ -11,12 +11,12 @@ $(function() {
 		$.ajax ({
 			url : "/codeBrokers/writeForm.bbs",
 			data : {
-				category : $("input[name=category]").val()
+				category : $("input[name=category]").val(),
+				pageNum : $("input[name=pageNum]").val()
 			},
 			success : function(data) {
 				$("#content").html(data);
 			} 
 		})
 	})
-
 })
