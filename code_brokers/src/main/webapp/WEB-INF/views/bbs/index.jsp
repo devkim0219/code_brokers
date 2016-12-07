@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CodeBrokers</title>
+<title>CodeBrokers - 코드연구소</title>
 <link rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/index.css?ver=1">
@@ -89,7 +89,7 @@
 		</nav>
 		<header>
 			<div class="jumbotron">
-				<h2>메인</h2>
+				<h2>CodeBrokers - 코드연구소</h2>
 			</div>
 			<ol class="breadcrumb">
 				<li><a href="/codeBrokers/index.bbs">CodeBrokers</a></li>
@@ -110,11 +110,11 @@
 					<div class="carousel-inner">
 						<!--슬라이드1-->
 						<div class="item active"> 
-							<img src="http://www.blueb.co.kr/SRC2/_image/w01.jpg" style="width:100%" alt="First slide">
+							<img src="resources/images/coding1.png" style="width:100%" alt="First slide">
 							<div class="container">
 								<div class="carousel-caption">
-									<h1>Slide 1</h1>
-									<p>텍스트 1</p>
+									<h1></h1>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -122,11 +122,11 @@
 				
 						<!--슬라이드2-->
 						<div class="item"> 
-							<img src="http://www.blueb.co.kr/SRC2/_image/w02.jpg" style="width:100%" data-src="" alt="Second slide">
+							<img src="resources/images/coding2.png" style="width:100%" data-src="" alt="Second slide">
 							<div class="container">
 								<div class="carousel-caption">
-									<h1>Slide 2</h1>
-									<p>텍스트 2</p>
+									<h1></h1>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -134,11 +134,11 @@
 						
 						<!--슬라이드3-->
 						<div class="item"> 
-							<img src="http://www.blueb.co.kr/SRC2/_image/w03.jpg" style="width:100%" data-src="" alt="Third slide">
+							<img src="resources/images/coding3.png" style="width:100%" data-src="" alt="Third slide">
 							<div class="container">
 								<div class="carousel-caption">
-									<h1>Slide 3</h1>
-									<p>텍스트 3</p>
+									<h1></h1>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -148,6 +148,18 @@
 					<!--이전, 다음 버튼-->
 					<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
 					<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+				</div>
+				<div class="explain">
+					<div class="top" align="center">
+						<h3>코드를 연구하는 사람들의 커뮤니티 입니다.</h3>
+					</div>
+					<div class="bottom">
+						<ul>
+							<li>창발적 설계 추구</li>
+							<li>간결하고 효율적인 코딩</li>
+							<li>오픈소스를 통한 win-win 전략</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</article>

@@ -9,7 +9,6 @@ public interface BBSService {
 	public Model list(int pageNum, String category, Model model);
 	public Model content(String articleNum, Model model);
 	public void delete(String articleNum);
-	public void upHit(String articleNum);
 	public BBSDto getUpdateArticle(String articleNum, Model model);
 	public void update(BBSDto article);
 }

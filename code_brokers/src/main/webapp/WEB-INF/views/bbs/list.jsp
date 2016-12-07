@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CodeBrokers</title>
+<title>CodeBrokers - 코드연구소</title>
 <link rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/index.css?ver=1">

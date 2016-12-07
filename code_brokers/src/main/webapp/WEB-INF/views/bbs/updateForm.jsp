@@ -10,11 +10,13 @@
 	    	<button class="btn btn-default" id="savebutton" type="submit">등록</button>
 	    	<button class="btn btn-default" id="cancelSave" type="button">취소</button>
 	    </div>
-	</form>
+	    <input type="hidden" name="category" value="${article.category}">
+		<input type="hidden" name="articleNum" value="${article.articleNum}">
+		<input type="hidden" name="pageNum" value="${pageNum}">		
+	</form>		
 </div>
-<input type="hidden" name="category" value="${article.category}">
-<input type="hidden" name="pageNum" value="${pageNum}">
 <input type="hidden" name="content" value="${article.content}">
+
 <script>
 $(function() {
     //전역변수선언

@@ -15,9 +15,9 @@
 		SELECT ARTICLENUM, ID, TITLE, HIT, TO_CHAR(WRITEDATE, 'YYYY-MM-DD') AS WRITEDATE, TO_CHAR(UPDATEDATE, 'YYYY-MM-DD') AS updateDate, category
 		FROM (SELECT ROWNUM RNUM, b.* 
 		    	  FROM (SELECT ARTICLENUM, ID, TITLE, HIT, WRITEDATE, updateDate, category 
-		            		FROM bbs) b
-		          WHERE category=#{category} ORDER BY rnum DESC)
-		WHERE RNUM BETWEEN #{startRow} AND #{startRow} + 9
+		            		FROM bbs ORDER BY articleNum DESC) b
+		          WHERE category=#{category})
+		WHERE RNUM BETWEEN #{startRow} AND #{startRow} + 9 
 	</select>
 	<select id="content" parameterType="String" resultType="article">
 		SELECT articleNum, id, title, content, TO_CHAR(writeDate, 'YYYY-MM-DD') AS writeDate, TO_CHAR(updateDate, 'YYYY-MM-DD') AS updateDate, hit

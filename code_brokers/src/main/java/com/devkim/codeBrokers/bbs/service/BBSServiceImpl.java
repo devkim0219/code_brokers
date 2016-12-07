@@ -56,10 +56,6 @@ public class BBSServiceImpl implements BBSService {
 		model.addAttribute("article", article);
 		return model;
 	}
-	
-	public void upHit(String articleNum) {
-		bbsDao.upHit(articleNum);
-	}
 
 	@Override
 	public void delete(String articleNum) {

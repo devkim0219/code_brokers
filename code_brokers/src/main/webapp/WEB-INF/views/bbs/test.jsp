@@ -139,19 +139,21 @@
 </style>
 </head>
 <body>
-<div class="loader-container">
-			<div class="rectangle-1"></div>
-			<div class="rectangle-2"></div>
-			<div class="rectangle-3"></div>
-			<div class="rectangle-4"></div>
-			<div class="rectangle-5"></div>
-			<div class="rectangle-6"></div>
-			<div class="rectangle-5"></div>
-			<div class="rectangle-4"></div>
-			<div class="rectangle-3"></div>
-			<div class="rectangle-2"></div>
-			<div class="rectangle-1"></div>	
-		</div>
+<div align="center">
+	<div class="loader-container">
+		<div class="rectangle-1"></div>
+		<div class="rectangle-2"></div>
+		<div class="rectangle-3"></div>
+		<div class="rectangle-4"></div>
+		<div class="rectangle-5"></div>
+		<div class="rectangle-6"></div>
+		<div class="rectangle-5"></div>
+		<div class="rectangle-4"></div>
+		<div class="rectangle-3"></div>
+		<div class="rectangle-2"></div>
+		<div class="rectangle-1"></div>	
+	</div>
+</div>
 <h1 align="center">아무 것도 없으니 돌아가거라~~</h1><br />
 <h2 align="center"><a href="./index.bbs">OK</a></h2>
 </body>

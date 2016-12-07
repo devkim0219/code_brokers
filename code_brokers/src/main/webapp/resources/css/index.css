@@ -158,6 +158,15 @@ th {
 	float: right;
 }
 
+.explain .top {
+	margin-top: 20px;
+}
+
+.explain .bottom {
+	margin: 0 0 0 300px;
+}
+
+/*화면 상단 애니메이션 */
 .loader-container {
   position: relative;
   height: 15px;

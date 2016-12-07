@@ -63,9 +63,9 @@ public class BBSController {
 	}
 	
 	@RequestMapping("/update.bbs")
-	public String update(String articleNum, String pageNum, String category, BBSDto article) {
+	public String update(String articleNum, String pageNum, String category, Model model, BBSDto article) {
 		bbsService.update(article);
-		return "redirect:/content.bbs?articleNum=" + articleNum + "&pageNum" + pageNum + "&category" + category;
+		return "redirect:/content.bbs?articleNum=" + articleNum + "&pageNum=" + pageNum + "&category=" + category;
 	}
 	
 	@RequestMapping("/test.bbs")
