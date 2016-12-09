@@ -3,5 +3,5 @@
 
 <div class="loginOK" align="center">
 	<h2>회원가입이 완료되었습니다.</h2>
-	<p><a href="#loginModalLayer"></a><p>
+	<p><a href="#loginModalLayer">로그인 하기</a><p>
 </div>

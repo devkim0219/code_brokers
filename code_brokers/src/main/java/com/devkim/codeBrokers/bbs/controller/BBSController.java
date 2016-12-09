@@ -49,7 +49,7 @@ public class BBSController {
 		return "content";
 	}	
 	
-	@RequestMapping("delete.bbs")
+	@RequestMapping("/delete.bbs")
 	public String delete(String articleNum, String pageNum, String category) {
 		bbsService.delete(articleNum);
 		return "redirect:/list.bbs?pageNum=" + pageNum + "&category=" + category;

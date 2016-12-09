@@ -1,11 +1,3 @@
-$.ajaxSetup ({
-	type: "post",
-	dataType : "text",
-	error : function(xhr) {
-		alert("error : " + xhr.statusText);
-	}	
-})
-
 $(function() {
 	var loginModalLayer = $("#loginModalLayer");
 	var modalLink = $(".modalLink");

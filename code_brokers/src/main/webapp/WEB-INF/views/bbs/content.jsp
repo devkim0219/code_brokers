@@ -115,11 +115,11 @@
 					
 					<div class="content-control-top">
 						<div class="control-btn">
-							<c:if test="${id != null}">
+							<c:if test="${id == article.id}">
 								<button class="btn btn-default btn-update" type="button">수정</button>
 								<button class="btn btn-default btn-delete" type="button">삭제</button>
 							</c:if>
-							<c:if test="${id == null}">
+							<c:if test="${id != article.id}">
 								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
 								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
 							</c:if>
@@ -131,11 +131,11 @@
 					</div>
 					<div class="content-control-bottom">
 						<div class="control-btn">
-							<c:if test="${id != null}">
+							<c:if test="${id == article.id}">
 								<button class="btn btn-default btn-update" type="button">수정</button>
 								<button class="btn btn-default btn-delete" type="button">삭제</button>
 							</c:if>
-							<c:if test="${id == null}">
+							<c:if test="${id != article.id}">
 								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
 								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
 							</c:if>
@@ -145,16 +145,12 @@
 					<div class="contentFooter">
 						<div class="comment">
 							<div id="disqus_thread"></div>
-							<script>
-								/**
-								*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-								*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-								/*
+							<script>	
 								var disqus_config = function () {
-								this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-								this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+// 									this.page.url = "http://pknu3.kr?" + category;
+									this.page.identifier = ${category};
 								};
-								*/
+								
 								(function() { // DON'T EDIT BELOW THIS LINE
 									var d = document, s = d.createElement('script');
 									s.src = '//codebrokers.disqus.com/embed.js';

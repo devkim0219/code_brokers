@@ -1,9 +1,11 @@
 package com.devkim.codeBrokers.login.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.devkim.codeBrokers.login.service.LoginService;
@@ -15,20 +17,40 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping("/login.login")
-	public String loginCheck(HttpSession session, String path, String id, String password) {		
+	public String loginCheck(HttpSession session, HttpServletRequest req, String id, String password, Model model) {		
+		String view = "";
 		int result = 0;
+		
 		result = loginService.loginCheck(session, id, password);
+		String referer = req.getHeader("referer");
+		String cp = req.getContextPath();
+		int indexPath = referer.indexOf(cp);
+		String path = referer.substring(indexPath + 13);
 		
 		if (result == LoginStatus.OK) {
 			session.setAttribute("id", id);
+			view = "redirect:/" + path;
+		} else if (result == LoginStatus.NOT_MEMBER) {
+			model.addAttribute("msg", "아이디가 존재하지 않습니다.");
+			model.addAttribute("redirectUrl", "redirect:/" + path);
+			view = "loginFail";
+		} else {
+			model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
+			model.addAttribute("redirectUrl", "redirect:/" + path);
+			view = "loginFail";
 		}
-		return "redirect:/";
+	
+		return view;
 	}
 	
 	@RequestMapping("/logout.login")
-	public String logout(HttpSession session, String password) {
-		session.invalidate();
+	public String logout(HttpSession session, HttpServletRequest req, String password) {
+		session.invalidate();	
+		String referer = req.getHeader("referer");
+		String cp = req.getContextPath();
+		int indexPath = referer.indexOf(cp);
+		String path = referer.substring(indexPath + 13);
 		
-		return "redirect:/";
+		return "redirect:/" + path;
 	}
 }

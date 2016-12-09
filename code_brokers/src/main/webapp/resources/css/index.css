@@ -170,7 +170,7 @@ th {
 .loader-container {
   position: relative;
   height: 15px;
-  width: 40px;
+  width: 50px;
   float: left;
 }
 
@@ -179,8 +179,8 @@ th {
   display: inline-block;
   background: #03A9F4;
   height: 50%;
-  width: 4px;
-  margin-top: 20px;
+  width: 5px;
+  margin-top: 22px;
   -webkit-animation: load 3s ease-in-out infinite;
   animation: load 3s ease-in-out infinite;
 }
