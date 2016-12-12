@@ -185,6 +185,7 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/index.js?ver=1"></script>
+<script src="resources/js/joinForm.js?ver=1"></script>
 <script>
 $.ajaxSetup({
 	type : "post",

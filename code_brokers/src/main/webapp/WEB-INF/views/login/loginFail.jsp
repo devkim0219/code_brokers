@@ -8,11 +8,15 @@
 <title></title>
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
+$(function() {
 	var message = "${msg}";
 	var redirectUrl = "${redirectUrl}";
 	alert(message);
 	document.location.href = redirectUrl;
+})	
+	
 </script>	
 </body>
 </html>
