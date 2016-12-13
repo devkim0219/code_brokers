@@ -4,4 +4,5 @@ import com.devkim.codeBrokers.member.dto.MemberDto;
 
 public interface MemberDao {
 	public void insertMember(MemberDto memberDto);
+	public MemberDto getUserByID(String id);
 }

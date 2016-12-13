@@ -5,6 +5,10 @@
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO member
 		VALUES (#{id}, #{password}, #{email}, #{nickname}, #{mailPermit}, #{notePermit}, SYSDATE)
-<!-- 		VALUES ('devkim', '1234', 'aaaaaaaaa', '1st', 'yes', 'all', SYSDATE) -->
 	</insert>
+	<select id="getUserById" parameterType="String" resultType="member">
+		SELECT id, password
+		FROM member
+		WHERE id = #{id}
+	</select>
 </mapper>

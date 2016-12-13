@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="resources/css/joinForm.css?ver=1">
 <link rel="stylesheet" href="resources/css/writeForm.css?ver=1">
 <link rel="stylesheet" href="resources/css/content.css?ver=1">
+<link rel="stylesheet" href="resources/css/loginForm.css?ver=1">
 </head>
 <body>
 	<div id="wrapper">
@@ -99,69 +100,23 @@
 		</header>
 		<article>
 			<div class="content" id="content">
-				<!-- @@@@@CONTENT CONTENT CONTENT@@@@@ -->		
-				<div class="viewContent">
-					<div class="contentHeader">
-						<div class="titleAndAuthor">
-							<div class="title"><h4>${article.title}</h4></div>
-							<div class="author">${article.id}</div>
-						</div>
-						<div class="dateAndCount">
-							<div class="url"><a href="#">게시글 주소</a></div>
-							<div class="writeDate"><strong>${article.writeDate}</strong> 글 작성 시간</div>
-							<div class="hit">조회수 : ${article.hit}</div>
-						</div>		
-					</div>
-					
-					<div class="content-control-top">
-						<div class="control-btn">
-							<c:if test="${id == article.id}">
-								<button class="btn btn-default btn-update" type="button">수정</button>
-								<button class="btn btn-default btn-delete" type="button">삭제</button>
-							</c:if>
-							<c:if test="${id != article.id}">
-								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
-								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
-							</c:if>
-							<button class="btn btn-default btn-list" type="button">목록</button>
-						</div>
-					</div>
-					<div class="contentBody">
-						${article.content}<br /><br />
-					</div>
-					<div class="content-control-bottom">
-						<div class="control-btn">
-							<c:if test="${id == article.id}">
-								<button class="btn btn-default btn-update" type="button">수정</button>
-								<button class="btn btn-default btn-delete" type="button">삭제</button>
-							</c:if>
-							<c:if test="${id != article.id}">
-								<button class="btn btn-default btn-update" type="button" disabled="disabled">수정</button>
-								<button class="btn btn-default btn-delete" type="button" disabled="disabled">삭제</button>
-							</c:if>
-							<button class="btn btn-default btn-list" type="button">목록</button>
-						</div>
-					</div>
-					<div class="contentFooter">
-						<div class="comment">
-							<div id="disqus_thread"></div>
-							<script>	
-								var disqus_config = function () {
-// 									this.page.url = "http://pknu3.kr?" + category;
-									this.page.identifier = ${category};
-								};
-								
-								(function() { // DON'T EDIT BELOW THIS LINE
-									var d = document, s = d.createElement('script');
-									s.src = '//codebrokers.disqus.com/embed.js';
-									s.setAttribute('data-timestamp', +new Date());
-									(d.head || d.body).appendChild(s);
-								})();
-							</script>
-							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-						</div>
-					</div>	
-				</div>
+				<!-- @@@@@CONTENT CONTENT CONTENT@@@@@ -->
+				 <div class="loginForm">
+			        <form method="post" name="" action="">
+			           <div class="box">
+			            <input type="text" class="iText" value="이메일 입력하세요.">
+			            <br>
+			            <input type="password" name="" id="" class="iText">
+			            <br>
+			            <p>
+			              <span class="fleft"><input type="checkbox" id=""><label for=""> 아이디 저장</label></span> 
+			              <span class="fright"><a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a></span>
+			            </p>
+			          </div>
+			          <a href="/codeBrokers/login.login" id="" class="loginBtn">로그인</a>
+			          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+			        </form>
+			      </div>		
 			</div>
 		</article>
 		<footer>

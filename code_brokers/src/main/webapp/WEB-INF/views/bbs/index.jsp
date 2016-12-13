@@ -177,7 +177,8 @@
 					<p><button class="btn btn-default" id="join" type="button">회원가입</button>
 							<button class="btn btn-primary" id="login" type="submit">
 							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;로그인</button>
-					</p>								 
+					</p>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">								 
 				</form>
 			</div>
 		</div>
