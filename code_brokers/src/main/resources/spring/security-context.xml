@@ -7,34 +7,34 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-	<http pattern="/**/*.js" security="none"/>
-	<http pattern="/**/*.css" security="none"/>
-	<http pattern="/images/*" security="none"/>
+<!-- 	<http pattern="/**/*.js" security="none"/> -->
+<!-- 	<http pattern="/**/*.css" security="none"/> -->
+<!-- 	<http pattern="/images/*" security="none"/> -->
 	
-	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="*.login" access="permitAll"/>
-		<intercept-url pattern="/resources/**" access="permitAll"/>
-		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
-		<intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
-			<form-login 
-				username-parameter="id"
-				password-parameter="password"
-				login-page="/loginForm.login"
-				default-target-url="/index.bbs"
-				authentication-failure-url="/login.login?fail=true"/>
-		<csrf />
-	</http>
+<!-- 	<http auto-config="true" use-expressions="true"> -->
+<!-- 		<intercept-url pattern="*.login" access="permitAll"/> -->
+<!-- 		<intercept-url pattern="/resources/**" access="permitAll"/> -->
+<!-- 		<intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/> -->
+<!-- 		<intercept-url pattern="/**" access="permitAll"/> -->
+<!-- 			<form-login  -->
+<!-- 				username-parameter="id" -->
+<!-- 				password-parameter="password" -->
+<!-- 				login-page="/loginForm.login" -->
+<!-- 				default-target-url="/index.bbs" -->
+<!-- 				authentication-failure-url="/login.login?error"/> -->
+<!-- 		<csrf /> -->
+<!-- 	</http> -->
 	
-	<authentication-manager>
-		<authentication-provider user-service-ref="userService"/>
-		<authentication-provider>
-			<user-service>
-				<user name="guest" password="1234" authorities="ROLE_USER"/>
-				<user name="admin" password="1234" authorities="ROLE_ADMIN"/>
-			</user-service>
-		</authentication-provider>
-	</authentication-manager>
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider user-service-ref="userService"/> -->
+<!-- 		<authentication-provider> -->
+<!-- 			<user-service> -->
+<!-- 				<user name="guest" password="1234" authorities="ROLE_USER"/> -->
+<!-- 				<user name="admin" password="1234" authorities="ADMIN"/> -->
+<!-- 			</user-service> -->
+<!-- 		</authentication-provider> -->
+<!-- 	</authentication-manager> -->
 	
-	<beans:bean id="userService" class="com.devkim.codeBrokers.member.service.UserService" />
+<!-- 	<beans:bean id="userService" class="com.devkim.codeBrokers.member.service.UserService" /> -->
 
 </beans:beans>           

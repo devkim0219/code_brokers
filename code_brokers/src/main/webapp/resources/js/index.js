@@ -28,7 +28,6 @@ $(function() {
 	}, function() {
 		$(this).find(".dropdown-menu").stop(true, true).delay(10).fadeOut(200);
 	})
-
 })
 
 function wrapWindowByMask() {

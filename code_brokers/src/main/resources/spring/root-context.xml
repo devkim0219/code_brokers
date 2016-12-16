@@ -43,4 +43,7 @@
 		p:mapperInterface="com.devkim.codeBrokers.bbs.dao.BBSDao"
 		p:sqlSessionTemplate-ref="sqlSessionTemplate"/>		
 		
+	<bean id="noteDao" class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:mapperInterface="com.devkim.codeBrokers.note.dao.NoteDao"
+		p:sqlSessionTemplate-ref="sqlSessionTemplate"/>		
 </beans>

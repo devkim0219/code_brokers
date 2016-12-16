@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +21,6 @@ public class LoginController {
 		return "loginForm";
 	}
 	
-	@Secured("ROLE_USER")
 	@RequestMapping("/login.login")
 	public String loginCheck(HttpSession session, HttpServletRequest req, String id, String password, Model model) {		
 		String view = "";

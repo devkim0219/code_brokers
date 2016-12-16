@@ -1,195 +1,346 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>CodeBrokers - 코드연구소</title>
-<link rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/index.css?ver=1">
-<link rel="stylesheet" href="resources/css/joinForm.css?ver=1">
-<link rel="stylesheet" href="resources/css/writeForm.css?ver=1">
-<link rel="stylesheet" href="resources/css/content.css?ver=1">
-<link rel="stylesheet" href="resources/css/loginForm.css?ver=1">
+	<head>
+	<meta charset="UTF-8">
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f8f8f8;
+}
+body .container {
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  height: 500px;
+  margin: 80px auto 0;
+  background-color: #ffffff;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+}
+body .container .half {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding: 58px 40px 0;
+}
+body .container .half.bg {
+  background-image: url("http://www.blueb.co.kr/SRC2/_image/v01.jpg");
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+body .container h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 23px;
+  text-align: center;
+  text-indent: 6px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: #263238;
+}
+body .container .tabs {
+  width: 100%;
+  margin-bottom: 29px;
+  border-bottom: 1px solid #d9d9d9;
+}
+body .container .tabs .tab {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 20px 15px 10px;
+  cursor: pointer;
+  letter-spacing: 0;
+  border-bottom: 1px solid #d9d9d9;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+}
+body .container .tabs .tab a {
+  font-size: 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #d9d9d9;
+  transition: all 0.1s ease-in-out;
+}
+body .container .tabs .tab.active a, body .container .tabs .tab:hover a {
+  color: #263238;
+}
+body .container .tabs .tab.active {
+  border-bottom: 1px solid #263238;
+}
+body .container .content form {
+  position: relative;
+  height: 287px;
+}
+body .container .content label:first-of-type, body .container .content input:first-of-type, body .container .content .more:first-of-type {
+  -moz-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+  -webkit-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+  animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+}
+body .container .content label:nth-of-type(2), body .container .content input:nth-of-type(2), body .container .content .more:nth-of-type(2) {
+  -moz-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+  -webkit-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+  animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+}
+body .container .content label:nth-of-type(3), body .container .content input:nth-of-type(3), body .container .content .more:nth-of-type(3) {
+  -moz-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+  -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+  animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+}
+body .container .content label {
+  font-size: 12px;
+  color: #263238;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body .container .content label:not([for='remember']) {
+  display: none;
+}
+body .container .content input.inpt {
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin-bottom: 12px;
+  padding: 16px 13px;
+  color: #999999;
+  border: 1px solid #d9d9d9;
+  background: transparent;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+body .container .content input.inpt::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Lato', sans-serif;
+}
+body .container .content input.inpt:-moz-placeholder {
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Lato', sans-serif;
+}
+body .container .content input.inpt::-moz-placeholder {
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Lato', sans-serif;
+}
+body .container .content input.inpt:-ms-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Lato', sans-serif;
+}
+body .container .content input.inpt:focus {
+  border-color: #999999;
+}
+body .container .content input.submit {
+  font-size: 12px;
+  line-height: 42px;
+  display: block;
+  width: 100%;
+  height: 42px;
+  cursor: pointer;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #263238;
+  border: 1px solid #263238;
+  background: transparent;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+body .container .content input.submit:hover {
+  background-color: #263238;
+  color: #ffffff;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+body .container .content input:focus {
+  outline: none;
+}
+body .container .content .checkbox {
+  margin-top: 4px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  margin: 17px -1px;
+  padding: 0;
+  border: 0;
+}
+body .container .content .checkbox + label {
+  vertical-align: middle;
+  display: inline-block;
+  width: 50%;
+}
+body .container .content .checkbox + label:before {
+  content: "\A";
+  color: #999999;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 10px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #d9d9d9;
+  width: 11px;
+  height: 11px;
+  margin: -2px 8px 0 0;
+}
+body .container .content .checkbox:checked + label:before {
+  content: "✓";
+}
+body .container .content .submit-wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+body .container .content .submit-wrap a {
+  font-size: 12px;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #999999;
+}
+body .container .content .submit-wrap a:hover {
+  text-decoration: underline;
+}
+body .container .content .signup-cont {
+  display: none;
+}
+
+@keyframes slideIn {
+  0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    margin-left: -320px;
+  }
+  100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+@-webkit-keyframes slideIn {
+  0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    margin-left: -320px;
+  }
+  100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+.credits {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #999999;
+  font-size: 14px;
+  margin: 0 10px 10px 0;
+}
+.credits a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+</style>
 </head>
 <body>
-	<div id="wrapper">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				<div class="loader-container">
-					<div class="rectangle-2"></div>
-					<div class="rectangle-3"></div>
-					<div class="rectangle-4"></div>
-					<div class="rectangle-5"></div>
-					<div class="rectangle-6"></div>
-				</div>
-					<a class="navbar-brand" href="/codeBrokers/index.bbs">&nbsp;&nbsp;CodeBrokers</a>
-				</div>
-	
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="/codeBrokers/list.bbs?pageNum=1&category=notice">공지사항</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">코드 연구실&nbsp;<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=apiLab">API 연구실</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=patternLab">패턴 연구실</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=exceptionLab">Exception 연구실</a></li>
-							</ul></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">강의실&nbsp;<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">강의실1</a></li>
-								<li><a href="#">강의실2</a></li>
-								<li><a href="#">강의실3</a></li>
-							</ul></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">개발자 포럼&nbsp;<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=news">IT관련 기사</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=qna">묻고 답하기</a></li>
-								<li><a href="/codeBrokers/list.bbs?pageNum=1&category=free">사는 이야기</a></li>
-							</ul></li>
-						<li><a href="/codeBrokers/test.bbs">테스트 메뉴</a></li>		
-						<c:if test="${id == null}">
-							<li id="login">
-								<a href="#loginModalLayer" class="modalLink">
-								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;로그인</a>
-							</li>
-						</c:if>
-						<c:if test="${id != null}">
-							<li class="dropdown" id="login"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">${nickname}&nbsp;&nbsp;&nbsp;<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">회원정보 수정</a></li>
-									<li><a href="#">쪽지함</a></li>
-									<li><a href="/codeBrokers/logout.login">로그아웃</a></li>
-								</ul>
-							</li>
-						</c:if>
-					</ul>
-				</div>				
-				<!-- /.navbar-collapse -->
-			</div>
-				<!-- /.container-fluid -->
-		</nav>
-		<header>
-			<div class="jumbotron">
-				<h2>${category}</h2>
-			</div>
-			<ol class="breadcrumb">
-				<li><a href="/codeBrokers/index.bbs">CodeBrokers</a></li>
-				<li class="active">${category}</li>
-			</ol>
-		</header>
-		<article>
-			<div class="content" id="content">
-				<!-- @@@@@CONTENT CONTENT CONTENT@@@@@ -->
-				 <div class="loginForm">
-			        <form method="post" name="" action="">
-			           <div class="box">
-			            <input type="text" class="iText" value="이메일 입력하세요.">
-			            <br>
-			            <input type="password" name="" id="" class="iText">
-			            <br>
-			            <p>
-			              <span class="fleft"><input type="checkbox" id=""><label for=""> 아이디 저장</label></span> 
-			              <span class="fright"><a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a></span>
-			            </p>
-			          </div>
-			          <a href="/codeBrokers/login.login" id="" class="loginBtn">로그인</a>
-			          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-			        </form>
-			      </div>		
-			</div>
-		</article>
-		<footer>
-			<div class="footer">ⓒ 2016. CodeBrokers all rights reserved.</div>
-		</footer>
-		
-		<input type="hidden" name="pageNum" value="${pageNum}">
-		<input type="hidden" name="category" value="${category}">
-		<input type="hidden" name="articleNum" value="${article.articleNum}">
-		
-		<div id="mask"></div>
-		<div id="loginModalLayer">
-			<div class="loginView">
-				<p>로그인<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
-				<form action="/codeBrokers/login.login" method="post" id="loginForm">
-					<p><input type="text" class="form-control" name="id" id ="loginId" placeholder="아이디"></p> 
-					<p><input type="password" class="form-control" name="password" id="loginPassword" placeholder="패스워드"></p>
-					<p><input type="checkbox" id="loginCheck">&nbsp;로그인 유지<button class="btn btn-default btn-sm" id="find">ID/PW 찾기</button></p>
-					<p><button class="btn btn-default" id="join" type="button">회원가입</button>
-							<button class="btn btn-primary" id="login" type="submit">
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;로그인</button>
-					</p>
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">								 
-				</form>
-			</div>
-		</div>
-	</div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/index.js?ver=1"></script>
-<script src="resources/js/content.js?ver=1"></script>
-<script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
-<script id="dsq-count-scr" src="//codebrokers.disqus.com/count.js" async></script>
-<script>
-$.ajaxSetup({
-	type : "post",
-	dataType : "text",
-	error : function(xhr) {
-		alert("error : " + xhr.statusText);
-	}	
-})
 
-$(function() {
-	$("#loginForm").on("submit", function() {
-		var id = $("#loginId").val();
-		var password = $("#loginPassword").val();
-		
-		if (id.length == 0) {
-			alert("아이디를 입력하세요.");
-			$("#loginId").focus();
-			return false;
-		}
-		
-		if (password == "") {
-			alert("패스워드를 입력하세요.");
-			$("#loginPassword").focus();
-			return false;
-		}
-		$("#loginForm").submit();
-	})
-	
-	$("#join").on("click", function() {
-		$.ajax({
-			url : "/codeBrokers/joinForm.member",
-			success : function(data) {
-				$("#loginModalLayer").hide();
-				$("#mask").hide();
-				$("#content").html(data);
-			}
-		})
-	})
-})
+<section class="container">
+		    <article class="half">
+			        <h1>CodeBrokers</h1>
+			        <div class="tabs">
+				            <span class="tab signin active"><a href="#signin">Sign in</a></span>
+				            <span class="tab signup"><a href="#signup">Sign up</a></span>
+			        </div>
+			        <div class="content">
+				            <div class="signin-cont cont">
+					                <form action="#" method="post" enctype="multipart/form-data">
+						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+						                    <label for="email">Your email</label>
+						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+						                    <input type="checkbox" id="remember" class="checkbox" checked>
+						                    <label for="remember">Remember me</label>
+						                    <div class="submit-wrap">
+							                        <input type="submit" value="Sign in" class="submit">
+							                        <a href="#" class="more">Forgot your password?</a>
+						                    </div>
+        					        </form>
+    				        </div>
+    				        <div class="signup-cont cont">
+                <form action="./login.login" method="post">
+						                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
+						                    <label for="name">Your name</label>
+                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+						                    <label for="email">Your email</label>
+						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+						                    <div class="submit-wrap">
+							                        <input type="submit" value="Sign up" class="submit">
+							                        <a href="#" class="more">Terms and conditions</a>
+						                    </div>
+        					        </form>
+            </div>
+			        </div>
+		    </article>
+		    <div class="half bg"></div>
+	</section>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script type="text/javascript">
+$('.tabs .tab').click(function(){
+    if ($(this).hasClass('signin')) {
+        $('.tabs .tab').removeClass('active');
+        $(this).addClass('active');
+        $('.cont').hide();
+        $('.signin-cont').show();
+    } 
+    if ($(this).hasClass('signup')) {
+        $('.tabs .tab').removeClass('active');
+        $(this).addClass('active');
+        $('.cont').hide();
+        $('.signup-cont').show();
+    }
+});
+// $('.container .bg').mousemove(function(e){
+//     var amountMovedX = (e.pageX * -1 / 30);
+//     var amountMovedY = (e.pageY * -1 / 9);
+//     $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+// });
 </script>
 </body>
 </html>

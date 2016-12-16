@@ -6,7 +6,7 @@
 		INSERT INTO member
 		VALUES (#{id}, #{password}, #{email}, #{nickname}, #{mailPermit}, #{notePermit}, SYSDATE)
 	</insert>
-	<select id="getUserById" parameterType="String" resultType="member">
+	<select id="getUserByID" parameterType="String" resultType="member">
 		SELECT id, password
 		FROM member
 		WHERE id = #{id}

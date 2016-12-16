@@ -196,14 +196,6 @@
 <script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script id="dsq-count-scr" src="//codebrokers.disqus.com/count.js" async></script>
 <script>
-$.ajaxSetup({
-	type : "post",
-	dataType : "text",
-	error : function(xhr) {
-		alert("error : " + xhr.statusText);
-	}	
-})
-
 $(function() {
 	$("#loginForm").on("submit", function() {
 		var id = $("#loginId").val();
@@ -224,14 +216,7 @@ $(function() {
 	})
 	
 	$("#join").on("click", function() {
-		$.ajax({
-			url : "/codeBrokers/joinForm.member",
-			success : function(data) {
-				$("#loginModalLayer").hide();
-				$("#mask").hide();
-				$("#content").html(data);
-			}
-		})
+		document.location.href="./joinForm.member";
 	})
 })
 
