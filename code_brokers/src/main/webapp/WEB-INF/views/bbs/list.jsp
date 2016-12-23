@@ -77,7 +77,7 @@
 							aria-expanded="false">${nickname}&nbsp;&nbsp;&nbsp;<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">회원정보 수정</a></li>
-									<li><a href="#">쪽지함</a></li>
+									<li><a href="#">쪽지함(0)</a></li>
 									<li><a href="/codeBrokers/logout.login">로그아웃</a></li>
 								</ul>
 							</li>

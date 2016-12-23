@@ -17,7 +17,8 @@
   position: relative;
   height: 40px;
   width: 160px;
-  margin: 200px auto 0;
+  margin-top: 100px;
+  margin-left: 550px;
 }
 
 .loader-container > div {
@@ -139,6 +140,8 @@
 </style>
 </head>
 <body>
+<h1 align="center">아무 것도 없으니 돌아가거라~~</h1><br />
+<h2 align="center"><a href="./index.bbs">OK</a></h2>
 <div align="center">
 	<div class="loader-container">
 		<div class="rectangle-1"></div>
@@ -154,8 +157,6 @@
 		<div class="rectangle-1"></div>	
 	</div>
 </div>
-<h1 align="center">아무 것도 없으니 돌아가거라~~</h1><br />
-<h2 align="center"><a href="./index.bbs">OK</a></h2>
 </body>
 </html>
 

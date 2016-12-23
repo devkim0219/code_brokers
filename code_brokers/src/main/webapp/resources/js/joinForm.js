@@ -11,7 +11,7 @@ $(function() {
     		return false;
     	}
     	
-    	for (i = 0; i < id.length; i++) {
+    	for (var i = 0; i < id.length; i++) {
     		chk = id.charAt(i);
     		if (!(chk >= 0 && chk <= 9) && !(chk >= "a" && chk <= "z")) {
     			alert("아이디는 영문 소문자, 숫자만 입력 가능합니다.");
@@ -25,7 +25,7 @@ $(function() {
     		alert("아이디에 공백을 사용할 수 없습니다.");
     		$(inputId).val("");
     		$(inputId).focus();
-			return false;
+    		return false;
     	}
     	
     	if ((id.charAt(0) >= 0) && (id.charAt(0) <= 9)) {
@@ -39,7 +39,7 @@ $(function() {
     		alert("아이디를 6~12자까지 입력해주세요.");
     		$(inputId).val("");
     		$(inputId).focus();
-			return false;
+    		return false;
     	}
     	
     	if (password == "") {
@@ -49,23 +49,23 @@ $(function() {
     		return false;
     	}
     	
-    	for (i = 0; password.length; i++) {
-    		chk = password.charAt(i);
-    		if (!(chk >= 0 && chk <=9) && !(chk >= "a" && chk <= "z")) {
-    			alert("비밀번호는 영문 소문자, 숫자만 입력 가능합니다.");
-    			$(inputPassword).val("");
-    			$(inputPassword).focus();
-    			return false;
-    		}
-    	}
-    	
     	if (password.length < 8 || password.length > 14) {
     		alert("비밀번호를 8~14자까지 입력해주세요.");
     		$(inputPassword).val("");
     		$(inputPassword).focus();
     		return false;
     	}
-    	
+
+    	for (var i = 0; password.length; i++) {
+    		chk = password.charAt(i);
+    		if (!(chk >= 0 && chk <= 9) && !(chk >= "a" && chk <= "z")) {
+    			alert("비밀번호는 영문 소문자, 숫자만 입력 가능합니다.");
+    			$(inputPassword).val("");
+    			$(inputPassword).focus();
+    			return false;
+    		}
+    	}
+    		
 //    	for (i = 0; password.length; i++) {
 //    		chk = password.charAt(i);
 //    		if ((chk >=0 && chk <= 9) && !(chk >= "a" && chk <= "z")) {
@@ -82,8 +82,6 @@ $(function() {
 //    			return  false;
 //    		}
 //    	}
-    	
-    	
     	
     })
 })

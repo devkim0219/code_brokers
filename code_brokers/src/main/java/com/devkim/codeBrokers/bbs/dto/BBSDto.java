@@ -72,11 +72,12 @@ public class BBSDto {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
 	@Override
 	public String toString() {
 		return "BBSDto [articleNum=" + articleNum + ", id=" + id + ", title=" + title + ", content=" + content
 				+ ", depth=" + depth + ", groupId=" + groupId + ", writeDate=" + writeDate + ", updateDate="
 				+ updateDate + ", hit=" + hit + ", category=" + category + "]";
 	}
-	
+
 }
